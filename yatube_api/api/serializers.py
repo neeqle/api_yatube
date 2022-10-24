@@ -1,4 +1,3 @@
-from attr import fields
 from rest_framework import serializers
 
 from posts.models import Comment, Group, Post
@@ -7,7 +6,7 @@ from posts.models import Comment, Group, Post
 class CommentSerializer(serializers.ModelSerializer):
     author = serializers.SlugRelatedField(read_only=True,
                                           slug_field='username')
-    
+
     class Meta:
         model = Comment
         fields = '__all__'
